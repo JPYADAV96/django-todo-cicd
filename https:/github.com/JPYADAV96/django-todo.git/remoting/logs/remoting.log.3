@@ -1,0 +1,46 @@
+Dec 21, 2022 9:32:11 AM hudson.remoting.jnlp.Main createEngine
+INFO: Setting up agent: agent1
+Dec 21, 2022 9:32:11 AM hudson.remoting.Engine startEngine
+INFO: Using Remoting version: 3071.v7e9b_0dc08466
+Dec 21, 2022 9:32:11 AM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /home/ubuntu/projects/django-todo/https:/github.com/JPYADAV96/django-todo.git/remoting as a remoting work directory
+Dec 21, 2022 9:32:12 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: WebSocket connection open
+Dec 21, 2022 9:32:12 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connected
+Dec 21, 2022 9:43:30 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Read side closed
+Dec 21, 2022 9:43:35 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Terminated
+Dec 21, 2022 9:43:45 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Performing onReconnect operation.
+Dec 21, 2022 9:43:52 AM jenkins.slaves.restarter.JnlpSlaveRestarterInstaller$EngineListenerAdapterImpl onReconnect
+INFO: Restarting agent via jenkins.slaves.restarter.UnixSlaveRestarter@51a32519
+Dec 21, 2022 9:43:52 AM hudson.Launcher$RemoteLaunchCallable$1 join
+INFO: Failed to synchronize IO streams on the channel hudson.remoting.Channel@75ae3cbd:agent1
+hudson.remoting.ChannelClosedException: Channel "hudson.remoting.Channel@75ae3cbd:agent1": Remote call on agent1 failed. The channel is closing down or has closed down
+	at hudson.remoting.Channel.call(Channel.java:993)
+	at hudson.remoting.Channel.syncIO(Channel.java:1732)
+	at hudson.Launcher$RemoteLaunchCallable$1.join(Launcher.java:1411)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at hudson.remoting.RemoteInvocationHandler$RPCRequest.perform(RemoteInvocationHandler.java:924)
+	at hudson.remoting.RemoteInvocationHandler$RPCRequest.call(RemoteInvocationHandler.java:902)
+	at hudson.remoting.RemoteInvocationHandler$RPCRequest.call(RemoteInvocationHandler.java:853)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:211)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:54)
+	at hudson.remoting.Request$2.run(Request.java:377)
+	at hudson.remoting.InterceptingExecutorService.lambda$wrap$0(InterceptingExecutorService.java:78)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:125)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: hudson.remoting.ChannelClosedException: Channel "hudson.remoting.Channel@75ae3cbd:agent1": channel is already closed
+	at hudson.remoting.Engine$1AgentEndpoint.lambda$onClose$1(Engine.java:632)
+	... 6 more
+
+Dec 21, 2022 9:44:38 AM hudson.remoting.Request$2 run
+INFO: Failed to send back a reply to the request UserRequest:UserRPCRequest:hudson.Launcher$RemoteProcess.join[](3): hudson.remoting.ChannelClosedException: Channel "hudson.remoting.Channel@75ae3cbd:agent1": channel is already closed
